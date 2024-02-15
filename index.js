@@ -67,3 +67,58 @@ function sortBrands(brandName) {
   });
   renderProducts(filterBrand);
 }
+
+///////Homework////////////////////
+
+/// Brand  bo'yicha sortlash
+
+// function sortBrand(productsObj, brands) {
+//   return productsObj.products.filter((el) => el.brand === brands);
+// }
+// const brands = sortBrand(product, "Samsung");
+// console.log(brands);
+
+/// Price kamayish bo'yicha sortlash
+
+// function sortPrice(productsPrice) {
+//   return productsPrice.products.sort((a, b) => b.price - a.price);
+// }
+// const pricedown = sortPrice(product);
+// console.log(pricedown);
+
+/// Price o'zishi bo'yicha sortlash
+
+// function sortpriceup(productsprice) {
+//   return productsprice.products.sort((a, b) => a.price - b.price);
+// }
+// const priceup = sortpriceup(product);
+// console.log(priceup);
+
+///Category bo'yicha sortlash
+
+// function sortCategory(productsObj, categorys) {
+//   return productsObj.products.filter((el) => el.category === categorys);
+// }
+// const categorys1 = sortCategory(product, "smartphones");
+// console.log(categorys1);
+
+function sortrating(productList) {
+  return productList.products.map((el) => {
+    return {
+      id: el.id,
+      miqdori: el.quantity,
+      sarlavhasi: el.title,
+      malumoti: el.description,
+      narxi: el.price,
+      chegirma: el.discountPercentage,
+      reytingi: el.rating,
+      aksiya: el.stock,
+      brendi: el.brand,
+      categoriyasi: el.category,
+      eskizi: el.thumbnail,
+      rasmi: [el.images],
+    };
+  });
+}
+let add = sortrating(product);
+console.log(add);
