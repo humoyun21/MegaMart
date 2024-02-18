@@ -6,7 +6,9 @@ function $$(selector) {
 }
 function render(element, className, htmlContent) {
   let tag = document.createElement(element);
-  tag.classList.add(className);
+  if (className) {
+    tag.classList.add(className);
+  }
   tag.innerHTML = htmlContent;
   return tag;
 }
